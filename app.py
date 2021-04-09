@@ -47,7 +47,7 @@ def get_suggestions():
 @app.route('/')
 def login():
     return render_template("login.html")
-database={'diane':'123','james':'aac','karthik':'asdsf'}
+database={'Patrick01':'npatos01','npatos01':'Jenny@01','Tatenda':'12345'}
 
 @app.route('/form_login',methods=['POST','GET'])
 def login_page():
