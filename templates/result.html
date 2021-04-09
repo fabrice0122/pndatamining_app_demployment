@@ -1,0 +1,635 @@
+<!--doctype html-->
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE-edge">
+<script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
+<meta name="viewport" content="width=device-width, intial-scale=1.0">
+<title>Book Recommendation Restult</title>
+<!-- jQuery -->
+    <script src="static/js/jquery-2.0.0.min.js" type="text/javascript"></script>
+
+    <!-- Bootstrap4 files-->
+    <script src="static/js/bootstrap.bundle.min.js" type="text/javascript"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <link href="static/css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <!-- Font awesome 5 -->
+    <link href="static/fonts/fontawesome/css/all.min.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <!-- custom style -->
+    <link href="static/css/ui.css" rel="stylesheet" type="text/css" />
+    <link href="static/css/responsive.css" rel="stylesheet" media="only screen and (max-width: 1200px)" />
+
+    <!-- custom javascript -->
+    <script src="static/js/script.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        /// some script
+
+        // jquery ready start
+        $(document).ready(function() {
+            // jQuery code
+
+        });
+        // jquery end
+    </script>
+    <style>
+
+        hr {
+            display: block;
+            height: 1px;
+            border: 0;
+            border-top: 1px solid #ccc;
+            margin: 1em 0;
+            padding: 0;
+        }
+    </style>
+	<!--style----->
+	<style>
+	
+    body{
+    margin:0px;
+    padding: 0px;
+    font-family: poppins;
+    background-color: rgba(151,151,151,0.03);
+}
+*{
+    box-sizing: border-box;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width:100%;
+    border:1px solid rgba(0,0,0,0.04);
+    background-color: #ffffff;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+}
+.logo img{
+    height: 35px;
+}
+nav .menu{
+    display: flex;
+}
+nav .menu li a{
+    height: 40px;
+    line-height: 43px;
+    margin: 0px;
+    padding: 0px 22px;
+    display: flex;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    color:#585858;
+    letter-spacing: 1px;
+}
+.search{
+    width:250px;
+    height: 40px;
+    background-color: rgba(245,245,245,0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    padding: 0px 20px;
+}
+.search input{
+    width:100%;
+    height: 30px;
+    border:none;
+    outline: none;
+    background-color: transparent;
+}
+.search i{
+    color:#3a3a3a;
+}
+nav .menu li a:hover{
+    background-color: #242424;
+    color:#ffffff;
+    box-shadow: 5px 10px 30px rgba(53,53,53,0.1);
+    transition: all ease 0.2s;
+}
+#main{
+    padding-top: 80px;
+    background-color: #ffffff;
+}
+.showcase-box{
+    width:430px;
+    height: 250px;
+    box-shadow: 5px 15px 30px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    margin:0px 20px 10px 20px;
+    overflow: hidden;
+}
+.showcase-box img{
+    width:100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+.showcase-heading{
+    padding-left: 30px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    color: #1a1a1a;
+}
+.cs-hidden{
+    overflow: visible !important;
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+}
+#latest{
+    border-top: 1px solid rgba(53,53,53,0.1);
+}
+.latest-heading{
+    margin: 30px 30px 0px 30px;
+    font-weight: 500;
+    font-size: 1.3rem;
+}
+.latest-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 2px 2px 30px rgba(0,0,0,0.2);
+    margin: 20px 10px;
+    border-radius: 10px;
+    overflow:hidden;
+    width:200px;
+    background-color: #ffffff;
+}
+.latest-b-img{
+    width:100%;
+    height: 270px;
+}
+.latest-b-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.latest-b-text strong{
+    color:#3a3a3a;
+    margin: 0px;
+}
+.latest-b-text{
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 10px;
+}
+.latest-b-text p{
+    color:#979797;
+    margin: 0px;
+}
+.movies-heading h2{
+    font-weight: 400;
+    margin: 0px;
+    padding: 1px 20px;
+    background-color: rgba(0,0,0,0.01);
+    border: 1px solid rgba(0,0,0,0.06);
+    font-size: 1.7rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    width: 100%;
+}
+.movies-heading{
+    display: flex;
+    margin:0px 2%;
+}
+.movies-box{
+    width:250px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 2px 2px 30px rgba(0,0,0,0.2);
+    margin: 20px;
+    border-radius: 5px;
+    overflow: hidden;
+    border-top: 3px solid #292929;
+}
+.movies-img{
+    width:100%;
+    height: 400px;
+    position: relative;
+}
+.movies-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.movies-box a{
+    text-align:center;
+    display: block;
+    font-weight: 600;
+    display: -webkit-box;
+    max-width: 80%;
+    -webkit-line-clamp: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #3a3a3a;
+    margin: 20px;
+}
+.movies-box:hover{
+    transform: translateY(-10px);
+    transition: all ease 0.2s;
+}
+#movies-list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.quality{
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #1f1f1f;
+    color: #ffffff;
+    padding: 5px 20px;
+    font-weight: 500;
+    border-radius: 0px 0px 10px 10px;
+    box-shadow: 5px 10px 30px rgba(0,0,0,0.4);
+}
+.btns{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btns a{
+    width: 130px;
+    height: 40px;
+    border:none;
+    outline: none;
+    color: #ffffff;
+    background-color: #3963f0;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+}
+.btns a:hover{
+    background-color: #284fd1;
+}
+footer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 1px solid rgba(0,0,0,0.1);
+ 
+}
+footer p{
+    color:#5e5e5e;
+    margin: 10px 0px;
+    font-size: 0.9rem;
+}
+nav .menu-btn{
+    display: none;
+}
+@media(max-width:1100px){
+    nav{
+        justify-content: space-between;
+        height: 70px;
+        padding: 0px 10px;
+    }
+    nav .menu{
+       display: none;
+        position: absolute;
+        top: 65px;
+        left: 0px;
+        background: #fff;
+        border-bottom:4px solid #242424;
+        width:100%;
+        padding:0px;
+        margin:0px;
+    }
+    .menu li{
+        width:100%;
+    }
+    nav .menu li a{
+        width: 100%;
+        height: 40px;
+        align-items: center;
+        margin: 0px;
+        padding:25px;
+        border:1px solid rgba(38,38,38,0.03);
+    }
+ 
+    nav .menu-icon{
+        cursor: pointer;
+        float: right;
+        padding:28px 20px;
+        position: relative;
+        user-select: none;
+        display: block;
+    }
+    nav .menu-icon .nav-icon{
+        background-color: #333333;
+        display: block;
+        height: 2px;
+        position: relative;
+        transition: background 0.2s ease-out;
+        width: 18px;
+    }
+    nav .menu-icon .nav-icon:before,
+    nav .menu-icon .nav-icon:after{
+        background: #333333;
+        content: '';
+        display: block;
+        height: 100%;
+        position: absolute;
+        transition: all ease-out 0.2s;
+        width: 100%;
+    }
+    nav .menu-icon .nav-icon:before{
+        top:5px;
+    }
+    nav .menu-icon .nav-icon:after{
+        top:-5px;
+    }
+    nav .menu-btn:checked ~ .menu-icon .nav-icon{
+        background: transparent;
+ 
+    }
+    nav .menu-btn:checked ~ .menu-icon .nav-icon:before{
+        transform: rotate(-45deg);
+        top: 0;
+    }
+    nav .menu-btn:checked ~ .menu-icon .nav-icon:after{
+        transform: rotate(45deg);
+        top: 0;
+    }
+    nav .menu-btn{
+        display: none;
+    }
+    nav .menu-btn:checked ~ .menu{
+        display: block;
+    }
+}
+@media(max-width:680px){
+    .showcase-box{
+        max-width: 300px;
+        height: 180px;
+        margin: 10px;
+    }
+    .latest-box{
+        width:190px;
+        margin: 20px 5px;
+    }
+    .movies-box{
+        flex-direction: row;
+        width:90%;
+        border: 1px solid rgba(0,0,0,0.2);
+    }
+    .movies-box a{
+        width:65%;
+    }
+    footer{
+        justify-content: space-between;
+        padding:0px 20px;
+        text-align: center;
+    }
+}
+@media(max-width:440px){
+    .movies-box a,.movies-box{
+        width: 100%;
+    }
+    .movies-box{
+        flex-direction: column;
+    }
+    .logo img{
+        height: 30px;
+    }
+    .search{
+        width: 90%;
+        height: 40px;
+    }
+}
+	</style>
+    <script>
+$(document).ready(function() {
+    $('#autoWidth,#autoWidth2').lightSlider({
+        autoWidth:true,
+        loop:true,
+        onSliderLoad: function() {
+            $('#autoWidth,#autoWidth2').removeClass('cS-hidden');
+        } 
+    });  
+  });
+
+    </script>    
+</head>
+
+  <!-- ========================= SECTION INTRO ========================= -->
+    <section class="section-intro padding-y-sm">
+        <div class="container">
+<nav class="navbar navbar-expand-lg  p-3 mb-2 bg-dark text-white"">
+  <a class="navbar-brand text-white" href="#">BKRSYSTEM</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="nav justify-content-end text-white">
+  <li class="nav-item ">
+    <a class="nav-link text-white" href="#">HOME</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link text-white" href="#">ABOUT</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link text-white" href="#">BLOG</a>
+  </li>
+  
+</ul>
+  
+  </div>
+</nav>
+
+            <div class="intro-banner-wrap">
+              <img src="https://images.adsttc.com/media/images/573c/90c0/e58e/ce1e/1600/0007/large_jpg/Here_is_a_theater_to_unfold_an_outstanding_drama__and_the_characters_are_book_lovers_sitting_on_the_soft_couch_or_standing_beside_the_bookshelves._0004.jpg?1463587001" style="Width: 1200px; Height: 450px;" class="img-fluid rounded">
+            </div>  
+
+        </div>
+<br/>
+<br/>  
+<h1 style="text-align: center;" class="p-3 mb-2 bg-dark text-white ">THE BOOK SELECTED BY THE READER</h1> 
+<br/>
+<br/> 
+<section id="movies-list">
+    <!--box-1------------------------>
+    <div class="movies-box">
+        <!--img------------>
+        <div class="movies-img">
+            <div class="quality">HDRip</div>
+            <img src={{images_searched.iloc[0]}}>
+        </div>
+        <!--text--------->
+        <a href="#">
+            <strong>{{authors_searched.iloc[0]}}</strong><br/>
+            <p>{{titles_searched.iloc[0]}}</p>
+        </a>
+    </div>
+</section>   
+<h1 style="text-align: center;" class="section-title p-3 mb-2 bg-dark text-white justify-content-center">Recommended Books the reader  might be interested in reading</h1>
+</div>
+<section id="movies-list">
+    <!--box-1------------------------>
+    <div class="movies-box">
+        <!--img------------>
+        <div class="movies-img">
+            <div class="quality">{{c_years.iloc[0]}}</div>
+            <img src={{c_small_image_url.iloc[0]}}>
+        </div>
+        <!--text--------->
+        <a href="#">
+            <strong>{{c_authors.iloc[0]}}</strong><br/>
+            <p>{{c_title.iloc[0]}}</p>
+        </a>
+    </div>
+     <!--box-2------------------------>
+     <div class="movies-box">
+        <!--img------------>
+        <div class="movies-img">
+            <div class="quality">{{c_years.iloc[1]}}</div>
+            <img src={{c_small_image_url.iloc[1]}}>
+        </div>
+        <!--text--------->
+        <a href="#">
+            <strong>{{c_authors.iloc[1]}}</strong><br/>
+            <p>{{c_title.iloc[1]}}</p>
+        </a>
+    </div>
+     <!--box-2------------------------>
+     <div class="movies-box">
+        <!--img------------>
+        <div class="movies-img">
+            <div class="quality">{{c_years.iloc[2]}}</div>
+            <img src={{c_small_image_url.iloc[2]}}>
+        </div>
+        <!--text--------->
+        <a href="#">
+            <strong>{{c_authors.iloc[2]}}</strong><br/>
+            <p>{{c_title.iloc[2]}}</p>
+        </a>
+    </div>
+     <!--box-2------------------------>
+     <div class="movies-box">
+        <!--img------------>
+        <div class="movies-img">
+            <div class="quality">{{c_years.iloc[3]}}</div>
+            <img src={{c_small_image_url.iloc[3]}}>
+        </div>
+        <!--text--------->
+        <a href="#">
+            <strong>{{c_authors.iloc[3]}}</strong><br/>
+            <p>{{c_title.iloc[3]}}</p>
+        </a>
+    </div>
+      <!--box-2------------------------>
+     <div class="movies-box">
+        <!--img------------>
+        <div class="movies-img">
+            <div class="quality">{{c_years.iloc[4]}}</div>
+            <img src={{c_small_image_url.iloc[4]}}>
+        </div>
+        <!--text--------->
+        <a href="#">
+            <strong>{{c_authors.iloc[4]}}</strong><br/>
+            <p>{{c_title.iloc[4]}}</p>
+        </a>
+    </div>
+     <!--box-2------------------------>
+     <div class="movies-box">
+        <!--img------------>
+        <div class="movies-img">
+            <div class="quality">{{c_years.iloc[5]}}</div>
+            <img src={{c_small_image_url.iloc[5]}}>
+        </div>
+        <!--text--------->
+        <a href="#">
+            <strong>{{c_authors.iloc[5]}}</strong><br/>
+            <p>{{c_title.iloc[5]}}</p>
+        </a>
+    </div>
+     <!--box-2------------------------>
+     <div class="movies-box">
+        <!--img------------>
+        <div class="movies-img">
+            <div class="quality">{{c_years.iloc[6]}}</div>
+            <img src={{c_small_image_url.iloc[6]}}>
+        </div>
+        <!--text--------->
+        <a href="#">
+            <strong>{{c_authors.iloc[6]}}</strong><br/>
+            <p>{{c_title.iloc[6]}}</p>
+        </a>
+    </div>
+     <!--box-2------------------------>
+     <div class="movies-box">
+        <!--img------------>
+        <div class="movies-img">
+            <div class="quality">{{c_years.iloc[7]}}</div>
+            <img src={{c_small_image_url.iloc[7]}}>
+        </div>
+        <!--text--------->
+        <a href="#">
+            <strong>{{c_authors.iloc[7]}}</strong><br/>
+            <p>{{c_title.iloc[7]}}</p>
+        </a>
+    </div>
+     <!--box-2------------------------>
+     <div class="movies-box">
+        <!--img------------>
+        <div class="movies-img">
+            <div class="quality">{{c_years.iloc[8]}}</div>
+            <img src={{c_small_image_url.iloc[8]}}>
+        </div>
+        <!--text--------->
+        <a href="#">
+            <strong>{{c_authors.iloc[8]}}</strong><br/>
+            <p>{{c_title.iloc[8]}}</p>
+        </a>
+    </div> <!--box-2------------------------>
+     <div class="movies-box">
+        <!--img------------>
+        <div class="movies-img">
+            <div class="quality">{{c_years.iloc[9]}}</div>
+            <img src={{c_small_image_url.iloc[9]}}>
+        </div>
+        <!--text--------->
+        <a href="#">
+            <strong>{{c_authors.iloc[9]}}</strong><br/>
+            <p>{{c_title.iloc[9]}}</p>
+        </a>
+    </div>
+</section>
+    
+<!--footer------------------>
+<footer>
+</footer>
+<body>
+</body>
+</html>

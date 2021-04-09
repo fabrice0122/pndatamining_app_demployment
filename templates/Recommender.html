@@ -1,0 +1,656 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="pragma" content="no-cache" />
+<meta http-equiv="cache-control" content="max-age=604800" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<title>Book Recommender System</title>
+
+<link href="static/images/favicon.ico" rel="shortcut icon" type="image/x-icon">
+
+<!-- jQuery -->
+<script src="static/js/jquery-2.0.0.min.js" type="text/javascript"></script>
+
+<!-- Bootstrap4 files-->
+<script src="static/js/bootstrap.bundle.min.js" type="text/javascript"></script>
+<link href="static/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+
+<!-- Font awesome 5 -->
+<link href="static/fonts/fontawesome/css/all.min.css" type="text/css" rel="stylesheet">
+<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+<!-- custom style -->
+<link href="static/css/ui.css" rel="stylesheet" type="text/css"/>
+<link href="static/css/responsive.css" rel="stylesheet" media="only screen and (max-width: 1200px)" />
+
+<!-- custom javascript -->
+<script src="static/js/script.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+/// some script
+
+// jquery ready start
+$(document).ready(function() {
+	// jQuery code
+
+}); 
+// jquery end
+</script>
+
+</head>
+<body>
+
+
+<header class="section-header">
+
+<nav class="navbar navbar-dark navbar-expand p-0 bg-primary">
+<div class="container">
+    <ul class="navbar-nav d-none d-md-flex mr-auto">
+		<li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+		<li class="nav-item"><a class="nav-link" href="#">Books</a></li>
+		<li class="nav-item"><a class="nav-link" href="#">Authors</a></li>
+    </ul>
+    <ul class="navbar-nav">
+		<li  class="nav-item"><a href="#" class="nav-link"> Call: +99812345678 </a></li>
+		<li class="nav-item dropdown">
+		 	<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"> English </a>
+		    <ul class="dropdown-menu dropdown-menu-right" style="max-width: 100px;">
+				<li><a class="dropdown-item" href="#">Kinyarwanda</a></li>
+				<li><a class="dropdown-item" href="#">French </a></li>
+		    </ul>
+		</li>
+	</ul> <!-- list-inline //  -->
+  </div> <!-- navbar-collapse .// -->
+</div> <!-- container //  -->
+</nav> <!-- header-top-light.// -->
+
+<section class="header-main border-bottom">
+	<div class="container">
+<div class="row align-items-center">
+	<div class="col-lg-2 col-6">
+	
+	</div>
+	
+	<div class="col-lg-4 col-sm-6 col-12">
+		<div class="widgets-wrap float-md-right">
+			<div class="widget-header  mr-3">
+			
+			</div>
+			<div class="widget-header icontext">
+				<div class="text">
+					<div> 
+					
+					</div>
+				</div>
+			</div>
+		</div> 
+	</div> 
+</div>  
+	</div> <!-- container.// -->
+</section> <!-- header-main .// -->
+</header> <!-- section-header.// -->
+
+
+
+
+</header> 
+<!-- section-header.// -->
+
+
+
+<!-- ========================= SECTION INTRO ========================= -->
+<section class="section-intro padding-y-sm">
+<div class="container">
+
+<div class="intro-banner-wrap">
+	<img src="https://image.jimcdn.com/app/cms/image/transf/dimension=2000x10000:format=jpg/path/s22032e2004f05f71/image/i824fc8427e205500/version/1504966117/image.jpg" style="Width: 1200px; Height: 450px;"class="img-fluid rounded">
+</div>
+
+</div> <!-- container //  -->
+</section>
+<!-- ========================= SECTION INTRO END// ========================= -->
+
+
+<!-- ========================= SECTION FEATURE ========================= -->
+<section class="section-content padding-y-sm">
+<div class="container">
+<article class="card card-body">
+
+
+<div class="row">
+	<div class="col-md-4">	
+		<figure class="item-feature">
+			<span class="text-primary"><i class="fa fa-2x fa-truck"></i></span>
+			<figcaption class="pt-3">
+				<h5 class="title">Fast delivery</h5>
+				<p>Dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore </p>
+			</figcaption>
+		</figure> <!-- iconbox // -->
+	</div><!-- col // -->
+	<div class="col-md-4">
+		<figure  class="item-feature">
+			<span class="text-primary"><i class="fa fa-2x fa-landmark"></i></span>	
+			<figcaption class="pt-3">
+				<h5 class="title">Creative Strategy</h5>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				 </p>
+			</figcaption>
+		</figure> <!-- iconbox // -->
+	</div><!-- col // -->
+    <div class="col-md-4">
+		<figure  class="item-feature">
+			<span class="text-primary"><i class="fa fa-2x fa-lock"></i></span>
+			<figcaption class="pt-3">
+				<h5 class="title">High secured </h5>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				 </p>
+			</figcaption>
+		</figure> <!-- iconbox // -->
+	</div> <!-- col // -->
+</div>
+</article>
+
+</div> <!-- container .//  -->
+</section>
+<!-- ========================= SECTION FEATURE END// ========================= -->
+
+
+<!-- ========================= SECTION CONTENT ========================= -->
+<section class="section-content">
+<div class="container">
+
+<header class="section-heading">
+	<h3 class="section-title">Searched Book:</h3>
+</header><!-- sect-heading -->
+<div class="row">
+	<div class="col-md-3">
+		<div href="#" class="card card-product-grid">
+			<a href="#" class="img-wrap"> <img src={{searchimages.iloc[0]}} style="width:300px"> </a>
+			<figcaption class="info-wrap">
+				<a href="#" class="title">{{searchtitles.iloc[0]}}</a>
+				
+				<div class="rating-wrap">
+					<ul class="rating-stars">
+						<li style="width:80%" class="stars-active"> 
+							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+						</li>
+						<li>
+							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> 
+						</li>
+					</ul>
+					<span class="label-rating text-muted"> {{searchauthors.iloc[0]}}</span>
+				</div>
+				<div class="price mt-1">{{searchyears.iloc[0]}}</div> <!-- price-wrap.// -->
+			</figcaption>
+		</div>
+	</div> <!-- col.// -->
+	
+</div> <!-- row.// -->
+
+</div> <!-- container .//  -->
+</section>
+<hr/>
+<!-- section 2 .//  -->
+<section class="section-content">
+<div class="container">	
+<header class="section-heading">
+	<h3 class="section-title">Recommended Books</h3>
+</header>
+<!-- sect-heading -->
+<div class="row">
+	<div class="col-md-3">
+		<div href="#" class="card card-product-grid">
+			<a href="#" class="img-wrap"> <img src={{image.iloc[0]}} style="width:300px"> </a>
+			<figcaption class="info-wrap">
+				<a href="#" class="title">{{title.iloc[0]}}</a>
+				
+				<div class="rating-wrap">
+					<ul class="rating-stars">
+						<li style="width:80%" class="stars-active"> 
+							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+						</li>
+						<li>
+							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> 
+						</li>
+					</ul>
+					<span class="label-rating text-muted"> {{author.iloc[0]}}</span>
+				</div>
+				<div class="price mt-1">{{year.iloc[0]}}</div> <!-- price-wrap.// -->
+			</figcaption>
+		</div>
+	</div> <!-- col.// -->
+	<div class="col-md-3">
+		<div href="#" class="card card-product-grid">
+			<a href="#" class="img-wrap"> <img src={{image.iloc[1]}} style="width:300px"> </a>
+			<figcaption class="info-wrap">
+				<a href="#" class="title">{{title.iloc[1]}}</a>
+				
+				<div class="rating-wrap">
+					<ul class="rating-stars">
+						<li style="width:80%" class="stars-active"> 
+							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+						</li>
+						<li>
+							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> 
+						</li>
+					</ul>
+					<span class="label-rating text-muted"> {{author.iloc[1]}}</span>
+				</div>
+				<div class="price mt-1">{{year.iloc[1]}}</div> <!-- price-wrap.// -->
+			</figcaption>
+		</div>
+	</div> <!-- col.// -->
+	<div class="col-md-3">
+		<div href="#" class="card card-product-grid">
+			<a href="#" class="img-wrap"> <img src={{image.iloc[2]}} style="width:300px"> </a>
+			<figcaption class="info-wrap">
+				<a href="#" class="title">{{title.iloc[2]}}</a>
+				
+				<div class="rating-wrap">
+					<ul class="rating-stars">
+						<li style="width:80%" class="stars-active"> 
+							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+						</li>
+						<li>
+							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> 
+						</li>
+					</ul>
+					<span class="label-rating text-muted"> {{author.iloc[2]}}</span>
+				</div>
+				<div class="price mt-1">{{year.iloc[2]}}</div> <!-- price-wrap.// -->
+			</figcaption>
+		</div>
+	</div> <!-- col.// -->
+	<div class="col-md-3">
+		<div href="#" class="card card-product-grid">
+			<a href="#" class="img-wrap"> <img src={{image.iloc[3]}} style="width:300px"> </a>
+			<figcaption class="info-wrap">
+				<a href="#" class="title">{{title.iloc[3]}}</a>
+				
+				<div class="rating-wrap">
+					<ul class="rating-stars">
+						<li style="width:80%" class="stars-active"> 
+							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+						</li>
+						<li>
+							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> 
+						</li>
+					</ul>
+					<span class="label-rating text-muted"> {{author.iloc[3]}}</span>
+				</div>
+				<div class="price mt-1">{{year.iloc[3]}}</div> <!-- price-wrap.// -->
+			</figcaption>
+		</div>
+	</div> <!-- col.// -->
+</div> <!-- row.// -->
+
+</div> <!-- container .//  -->
+</section>
+<!-- sect3 -->
+<section class="section-content">
+<div class="container">	
+<div class="row">
+	<div class="col-md-3">
+		<div href="#" class="card card-product-grid">
+			<a href="#" class="img-wrap"> <img src={{image.iloc[4]}} style="width:300px"> </a>
+			<figcaption class="info-wrap">
+				<a href="#" class="title">{{title.iloc[4]}}</a>
+				
+				<div class="rating-wrap">
+					<ul class="rating-stars">
+						<li style="width:80%" class="stars-active"> 
+							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+						</li>
+						<li>
+							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> 
+						</li>
+					</ul>
+					<span class="label-rating text-muted"> {{author.iloc[4]}}</span>
+				</div>
+				<div class="price mt-1">{{year.iloc[4]}}</div> <!-- price-wrap.// -->
+			</figcaption>
+		</div>
+	</div> <!-- col.// -->
+	<div class="col-md-3">
+		<div href="#" class="card card-product-grid">
+			<a href="#" class="img-wrap"> <img src={{image.iloc[5]}} style="width:300px"> </a>
+			<figcaption class="info-wrap">
+				<a href="#" class="title">{{title.iloc[5]}}</a>
+				
+				<div class="rating-wrap">
+					<ul class="rating-stars">
+						<li style="width:80%" class="stars-active"> 
+							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+						</li>
+						<li>
+							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> 
+						</li>
+					</ul>
+					<span class="label-rating text-muted"> {{author.iloc[5]}}</span>
+				</div>
+				<div class="price mt-1">{{year.iloc[5]}}</div> <!-- price-wrap.// -->
+			</figcaption>
+		</div>
+	</div> <!-- col.// -->
+	<div class="col-md-3">
+		<div href="#" class="card card-product-grid">
+			<a href="#" class="img-wrap"> <img src={{image.iloc[6]}} style="width:300px"> </a>
+			<figcaption class="info-wrap">
+				<a href="#" class="title">{{title.iloc[6]}}</a>
+				
+				<div class="rating-wrap">
+					<ul class="rating-stars">
+						<li style="width:80%" class="stars-active"> 
+							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+						</li>
+						<li>
+							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> 
+						</li>
+					</ul>
+					<span class="label-rating text-muted"> {{author.iloc[6]}}</span>
+				</div>
+				<div class="price mt-1">{{year.iloc[6]}}</div> <!-- price-wrap.// -->
+			</figcaption>
+		</div>
+	</div> <!-- col.// -->
+	<div class="col-md-3">
+		<div href="#" class="card card-product-grid">
+			<a href="#" class="img-wrap"> <img src={{image.iloc[7]}} style="width:300px"> </a>
+			<figcaption class="info-wrap">
+				<a href="#" class="title">{{title.iloc[7]}}</a>
+				
+				<div class="rating-wrap">
+					<ul class="rating-stars">
+						<li style="width:80%" class="stars-active"> 
+							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+						</li>
+						<li>
+							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> 
+						</li>
+					</ul>
+					<span class="label-rating text-muted"> {{author.iloc[7]}}</span>
+				</div>
+				<div class="price mt-1">{{year.iloc[7]}}</div> <!-- price-wrap.// -->
+			</figcaption>
+		</div>
+	</div> <!-- col.// -->
+</div> <!-- row.// -->
+
+</div> <!-- container .//  -->
+</section>
+<!-- ========================= SECTION CONTENT END// ========================= -->
+
+
+
+<!-- ========================= SECTION CONTENT ========================= -->
+<section class="section-content">
+<div class="container">
+
+<header class="section-heading">
+	<h3 class="section-title">Most Rated book</h3>
+</header><!-- sect-heading -->
+
+<div class="row">
+	<div class="col-md-3">
+		<div href="#" class="card card-product-grid">
+			<a href="#" class="img-wrap"> <img src={{images_rating.iloc[0]}} style="width:300px"> </a>
+			<figcaption class="info-wrap">
+				<a href="#" class="title">{{titles_rating.iloc[0]}} </a>
+				
+				<div class="rating-wrap">
+					<ul class="rating-stars">
+						<li style="width:80%" class="stars-active"> 
+							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+						</li>
+						<li>
+							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> 
+						</li>
+					</ul>
+					<span class="label-rating text-muted">{{scores_rating.iloc[0]}} Ratings</span>
+				</div>
+				<div class="price mt-1">{{authors_rating.iloc[0]}}</div> <!-- price-wrap.// -->
+			</figcaption>
+		</div>
+	</div> <!-- col.// -->
+	<div class="col-md-3">
+		<div href="#" class="card card-product-grid">
+			<a href="#" class="img-wrap"> <img src={{images_rating.iloc[1]}} style="width:300px" > </a>
+			<figcaption class="info-wrap">
+				<a href="#" class="title">{{titles_rating.iloc[1]}}</a>
+				
+				<div class="rating-wrap">
+					<ul class="rating-stars">
+						<li style="width:80%" class="stars-active"> 
+							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+						</li>
+						<li>
+							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> 
+						</li>
+					</ul>
+					<span class="label-rating text-muted"> {{scores_rating.iloc[1]}} Ratings</span>
+				</div>
+				<div class="price mt-1">{{authors_rating.iloc[1]}}</div> <!-- price-wrap.// -->
+			</figcaption>
+		</div>
+	</div> <!-- col.// -->
+	<div class="col-md-3">
+		<div href="#" class="card card-product-grid">
+			<a href="#" class="img-wrap"> <img src={{images_rating.iloc[2]}} style="width:300px"> </a>
+			<figcaption class="info-wrap">
+				<a href="#" class="title">{{titles_rating.iloc[2]}}</a>
+				
+				<div class="rating-wrap">
+					<ul class="rating-stars">
+						<li style="width:80%" class="stars-active"> 
+							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+						</li>
+						<li>
+							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> 
+						</li>
+					</ul>
+					<span class="label-rating text-muted"> {{scores_rating.iloc[2]}} Ratings</span>
+				</div>
+				<div class="price mt-1">{{authors_rating.iloc[2]}}</div> <!-- price-wrap.// -->
+			</figcaption>
+		</div>
+	</div> <!-- col.// -->
+	<div class="col-md-3">
+		<div href="#" class="card card-product-grid">
+			<a href="#" class="img-wrap"> <img src={{images_rating.iloc[3]}} style="width:300px"> </a>
+			<figcaption class="info-wrap">
+				<a href="#" class="title">{{titles_rating.iloc[3]}}</a>
+				
+				<div class="rating-wrap">
+					<ul class="rating-stars">
+						<li style="width:80%" class="stars-active"> 
+							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+						</li>
+						<li>
+							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> 
+						</li>
+					</ul>
+					<span class="label-rating text-muted"> {{scores_rating.iloc[3]}} Ratings</span>
+				</div>
+				<div class="price mt-1">{{authors_rating.iloc[3]}}</div> <!-- price-wrap.// -->
+			</figcaption>
+		</div>
+	</div> <!-- col.// -->
+</div> <!-- row.// -->
+
+</div> <!-- container .//  -->
+</section>
+
+<section class="section-content">
+<div class="container">
+<div class="row">
+	<div class="col-md-3">
+		<div href="#" class="card card-product-grid">
+			<a href="#" class="img-wrap"> <img src={{images_rating.iloc[4]}} style="width:300px"> </a>
+			<figcaption class="info-wrap">
+				<a href="#" class="title">{{titles_rating.iloc[4]}} </a>
+				
+				<div class="rating-wrap">
+					<ul class="rating-stars">
+						<li style="width:80%" class="stars-active"> 
+							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+						</li>
+						<li>
+							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> 
+						</li>
+					</ul>
+					<span class="label-rating text-muted">{{scores_rating.iloc[4]}} Ratings</span>
+				</div>
+				<div class="price mt-1">{{authors_rating.iloc[4]}}</div> <!-- price-wrap.// -->
+			</figcaption>
+		</div>
+	</div> <!-- col.// -->
+	<div class="col-md-3">
+		<div href="#" class="card card-product-grid">
+			<a href="#" class="img-wrap"> <img src={{images_rating.iloc[5]}} style="width:300px" > </a>
+			<figcaption class="info-wrap">
+				<a href="#" class="title">{{titles_rating.iloc[5]}}</a>
+				
+				<div class="rating-wrap">
+					<ul class="rating-stars">
+						<li style="width:80%" class="stars-active"> 
+							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+						</li>
+						<li>
+							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> 
+						</li>
+					</ul>
+					<span class="label-rating text-muted"> {{scores_rating.iloc[5]}} Ratings</span>
+				</div>
+				<div class="price mt-1">{{authors_rating.iloc[5]}}</div> <!-- price-wrap.// -->
+			</figcaption>
+		</div>
+	</div> <!-- col.// -->
+	<div class="col-md-3">
+		<div href="#" class="card card-product-grid">
+			<a href="#" class="img-wrap"> <img src={{images_rating.iloc[6]}} style="width:300px"> </a>
+			<figcaption class="info-wrap">
+				<a href="#" class="title">{{titles_rating.iloc[6]}}</a>
+				
+				<div class="rating-wrap">
+					<ul class="rating-stars">
+						<li style="width:80%" class="stars-active"> 
+							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+						</li>
+						<li>
+							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> 
+						</li>
+					</ul>
+					<span class="label-rating text-muted"> {{scores_rating.iloc[6]}} Ratings</span>
+				</div>
+				<div class="price mt-1">{{authors_rating.iloc[6]}}</div> <!-- price-wrap.// -->
+			</figcaption>
+		</div>
+	</div> <!-- col.// -->
+	<div class="col-md-3">
+		<div href="#" class="card card-product-grid">
+			<a href="#" class="img-wrap"> <img src={{images_rating.iloc[7]}} style="width:300px"> </a>
+			<figcaption class="info-wrap">
+				<a href="#" class="title">{{titles_rating.iloc[7]}}</a>
+				
+				<div class="rating-wrap">
+					<ul class="rating-stars">
+						<li style="width:80%" class="stars-active"> 
+							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+						</li>
+						<li>
+							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> 
+						</li>
+					</ul>
+					<span class="label-rating text-muted"> {{scores_rating.iloc[7]}} Ratings</span>
+				</div>
+				<div class="price mt-1">{{authors_rating.iloc[7]}}</div> <!-- price-wrap.// -->
+			</figcaption>
+		</div>
+	</div> <!-- col.// -->
+</div> <!-- row.// -->
+
+</div> <!-- container .//  -->
+</section>
+<!-- ========================= SECTION CONTENT END// ========================= -->
+
+<!-- ========================= FOOTER ========================= -->
+<footer class="section-footer border-top bg">
+	<div class="container">
+		<section class="footer-top  padding-y">
+			<div class="row">
+				<aside class="col-md col-6">
+					<h6 class="title">Brands</h6>
+					<ul class="list-unstyled">
+						<li> <a href="#">Adidas</a></li>
+						<li> <a href="#">Puma</a></li>
+						<li> <a href="#">Reebok</a></li>
+						<li> <a href="#">Nike</a></li>
+					</ul>
+				</aside>
+				<aside class="col-md col-6">
+					<h6 class="title">Company</h6>
+					<ul class="list-unstyled">
+						<li> <a href="#">About us</a></li>
+						<li> <a href="#">Career</a></li>
+						<li> <a href="#">Find a store</a></li>
+						<li> <a href="#">Rules and terms</a></li>
+						<li> <a href="#">Sitemap</a></li>
+					</ul>
+				</aside>
+				<aside class="col-md col-6">
+					<h6 class="title">Help</h6>
+					<ul class="list-unstyled">
+						<li> <a href="#">Contact us</a></li>
+						<li> <a href="#">Money refund</a></li>
+						<li> <a href="#">Order status</a></li>
+						<li> <a href="#">Shipping info</a></li>
+						<li> <a href="#">Open dispute</a></li>
+					</ul>
+				</aside>
+				<aside class="col-md col-6">
+					<h6 class="title">Account</h6>
+					<ul class="list-unstyled">
+						<li> <a href="#"> User Login </a></li>
+						<li> <a href="#"> User register </a></li>
+						<li> <a href="#"> Account Setting </a></li>
+						<li> <a href="#"> My Orders </a></li>
+					</ul>
+				</aside>
+				<aside class="col-md">
+					<h6 class="title">Social</h6>
+					<ul class="list-unstyled">
+						<li><a href="#"> <i class="fab fa-facebook"></i> Facebook </a></li>
+						<li><a href="#"> <i class="fab fa-twitter"></i> Twitter </a></li>
+						<li><a href="#"> <i class="fab fa-instagram"></i> Instagram </a></li>
+						<li><a href="#"> <i class="fab fa-youtube"></i> Youtube </a></li>
+					</ul>
+				</aside>
+			</div> <!-- row.// -->
+		</section>	<!-- footer-top.// -->
+
+		<section class="footer-bottom row">
+			<div class="col-md-2">
+				<p class="text-muted"> &copy 2019 Company name </p>
+			</div>
+			<div class="col-md-8 text-md-center">
+				<span  class="px-2">info@pixsellz.io</span>
+				<span  class="px-2">+879-332-9375</span>
+				<span  class="px-2">Street name 123, Avanue abc</span>
+			</div>
+			<div class="col-md-2 text-md-right text-muted">
+				<i class="fab fa-lg fa-cc-visa"></i>
+				<i class="fab fa-lg fa-cc-paypal"></i>
+				<i class="fab fa-lg fa-cc-mastercard"></i>
+			</div>
+		</section>
+	</div><!-- //container -->
+</footer>
+<!-- ========================= FOOTER END // ========================= -->
+
+
+</body>
+
+</html>
